@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "a node backend for practice",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "script":"node index.js",
+    "script": "node index.js",
+    "dev": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -13,5 +15,8 @@
     "express"
   ],
   "author": "jignesh kiri",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
 }
