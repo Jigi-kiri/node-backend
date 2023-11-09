@@ -1,9 +1,20 @@
 import dotenv from "dotenv";
 import connectionDB from "./db/index.js";
+import app from "./app.js";
 
 dotenv.config({ path: "./.env" });
 
-connectionDB();
+const port = process.env.PORT;
+
+connectionDB()
+  .then(() => {
+    app.listen(port || 8000, () => {
+      console.log(`Server running at port: ${port}`);
+    });
+  })
+  .catch((err) => {
+    console.log("Mongoo connection failed !!!");
+  });
 
 /*const app = express();
 (async () => {
